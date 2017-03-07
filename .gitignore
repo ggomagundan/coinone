@@ -1,0 +1,13 @@
+/.bundle/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+*.gem
+/vendor/cache
+/vendor/bundle
+.DS_Store
+*/.DS_Store
+Gemfile.lock
