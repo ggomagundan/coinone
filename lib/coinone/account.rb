@@ -24,17 +24,12 @@ module Coinone
 
 
     def get_user_info
-      res = @connection.post( "/account/user_info/")
+      response = @connection.post( "/v2/account/user_info/")
 
-      @connection.check_for_errors(res.body)
-
-      puts res.body
-
-      set_user_info(res.body)
+      set_user_info(response)
     end
 
     def set_user_info(params={})
-      json = JSON.parse(params, :symbolize_names => true)
 
       user_info = json[:userInfo]
       @security_level = user_info[:securityLevel].to_i

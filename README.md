@@ -1,8 +1,7 @@
 # Coinone
 [![GemVersion](https://badge.fury.io/rb/coinone.svg)](https://badge.fury.io/rb/coinone)
 
-`Coinone` Gem is porting from Coinone API
-
+`Coinone` Gem is Ruby Language porting from Coinone API, and only support V2.
 
 ## Installation
 
@@ -22,8 +21,80 @@ Or install it yourself as:
 
 ## Usage
 
+First, You set `ACCESS_TOKEN` and `SECRET_KEY` using [figaro](https://github.com/laserlemon/figaro) or [dotenv](https://github.com/bkeepers/dotenv)
 
-## Todo
+#### Account V2
+- ACCOUNT V2 / Account Infomation
+```ruby
+user =  Coinone::Account.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+user.get_user_info
+
+```
+
+#### OAUTH
+
+#### ORDER V2
+
+#### PUBLIC
+
+Not Need `ACCESS_TOKEN` and `SECRET_KEY`
+
+- PUBLIC / Currency
+```ruby
+currency =  Coinone::Public.get_currency
+
+
+```
+
+- PUBLIC / Orderbook
+```ruby
+orderbook =  Coinone::Public.get_orderbook # Default "BTC"
+
+btc_orderbook =  Coinone::Public.get_orderbook(currency: "btc") # BTC Orderbook
+
+eth_orderbook =  Coinone::Public.get_orderbook(currency: "eth") # ETH Orderbook
+
+etc_orderbook =  Coinone::Public.get_orderbook(currency: "etc") # ETC Orderbook
+
+```
+
+
+- PUBLIC / Recent Complete Orders
+```ruby
+complete_orders =  Coinone::Public.get_complete_orders # Default "BTC" and "Hour"
+
+btc_hour_complete_orders =  Coinone::Public.get_complete_orders(currency: "btc", period: "hour") # BTC and Hour Complete Orders
+
+btc_day_complete_orders =  Coinone::Public.get_complete_orders(currency: "btc", period: "day") # BTC and Day Complete Orders
+
+eth_hour_complete_orders =  Coinone::Public.get_complete_orders(currency: "eth", period: "hour") # ETH and Hour Complete Orders
+
+eth_day_complete_orders =  Coinone::Public.get_complete_orders(currency: "eth", period: "day") # ETH and Day Complete Orders
+
+etc_hour_complete_orders =  Coinone::Public.get_complete_orders(currency: "etc", period: "hour") # ETC and Hour Complete Orders
+
+etc_day_complete_orders =  Coinone::Public.get_complete_orders(currency: "etc", period: "day") # ETC and Hour Complete Orders 
+
+```
+
+- PUBLIC / Ticker
+```ruby
+ticker =  Coinone::Public.get_ticker # Default "BTC"
+
+btc_ticker =  Coinone::Public.get_ticker(currency: "btc") # BTC Ticker
+
+etc_ticker =  Coinone::Public.get_ticker(currency: "etc") # ETH Ticker
+
+etc_ticker =  Coinone::Public.get_ticker(currency: "etc") # ETC Ticker
+
+all_ticker =  Coinone::Public.get_ticker(currency: "all") # ALL Ticker
+
+```
+
+#### TRANSACTION V2 
+
+## ToDo
 - [x] ACCOUNT V2 / Account Infomation
 - [ ] ACCOUNT V2 / Balance
 - [ ] ACCOUNT V2 / Daily Balance
@@ -44,11 +115,10 @@ Or install it yourself as:
 - [ ] ORDER V2 / My Complete Orders
 - [ ] ORDER V2 / My Limit Orders
 
-
-- [ ] PUBLIC / Currency
-- [ ] PUBLIC / OrderBook
-- [ ] PUBLIC / Recent Complete Orders
-- [ ] PUBLIC / Ticker
+- [x] PUBLIC / Currency
+- [x] PUBLIC / OrderBook
+- [x] PUBLIC / Recent Complete Orders
+- [x] PUBLIC / Ticker
 
 - [ ] TRANSACTION V2 / 2-Factor Authentication
 - [ ] TRANSACTION V2 / Coin Transactions History
@@ -79,4 +149,7 @@ This link listing [Change Log](https://github.com/ggomagundan/coinone/blob/maste
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+
+
 

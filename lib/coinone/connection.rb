@@ -10,13 +10,13 @@ module Coinone
 
      attr_reader :access_token, :secret_key
 
-     BASE_URI = "https://api.coinone.co.kr/v2"
+     BASE_URI = "https://api.coinone.co.kr"
      REQUEST_URI = "https://coinone.co.kr/account/login/"
      AUTH_URI = "https://api.coinone.co.kr/oauth/access_token/"
      REFRESH_AUTH_URI = "https://api.coinone.co.kr/oauth/refresh_token/" 
      DELETE_AUTH_URI = "https://api.coinone.co.kr/oauth/delete_token/"
-     ACCESS_TOKEN = "ea3e8668-58cc-4eba-84b2-cdfbe616e5cc"
-     SECRET_KEY= "dac26d4b-558f-4ada-b2ad-549bc1242554"
+     ACCESS_TOKEN = "ACESS_TOKEN"
+     SECRET_KEY= "SECRET_KEY"
 
      def self.factory(params) # :nodoc
        Connection.new(
@@ -37,7 +37,12 @@ module Coinone
      end
 
      def get( connection_uri, params = {} )
-       resource[ connection_uri ].get params: params.merge(access_token: @access_token)
+
+       response = resource[ connection_uri ].get params: params.merge(access_token: @access_token)
+       check_for_errors(response.body)
+       JSON.parse(response.body, symbolize_names: true)
+
+
      end
 
      def post( connection_uri, params = {} )
@@ -52,8 +57,10 @@ module Coinone
        puts "signature:  #{create_coinone_signature(payload)}"
 =end
 
-       resource[ connection_uri ].post params, {'Content-Type': 'application/json', 'X-COINONE-PAYLOAD': payload, 'X-COINONE-SIGNATURE': signature }
+       response = resource[ connection_uri ].post params, {'Content-Type': 'application/json', 'X-COINONE-PAYLOAD': payload, 'X-COINONE-SIGNATURE': signature }
 
+       check_for_errors(response.body)
+       JSON.parse(response.body, symbolize_names: true)
      end
 
      def create_coinone_signature( payload )

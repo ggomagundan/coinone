@@ -12,8 +12,8 @@ module Coinone
         end
 
         def update_info(params={})
-          @taker = params[:taker] if params.has_key? :taker
-          @maker = params[:maker] if params.has_key? :maker
+          @taker = params[:taker].to_f if params.has_key? :taker
+          @maker = params[:maker].to_f if params.has_key? :maker
         end
 
       end
