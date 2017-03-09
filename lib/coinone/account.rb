@@ -11,6 +11,7 @@ module Coinone
     attr_reader :security_level
     attr_reader :connection
     attr_reader :bank_info, :email_info, :fee_rate, :virtual_account_info, :mobile_info
+    attr_reader :normal_wallets, :total_wallet
 
     def initialize(options={}, connection=nil)
       @connection = connection || Connection.factory(options)
@@ -31,7 +32,7 @@ module Coinone
 
     def set_user_info(params={})
 
-      user_info = json[:userInfo]
+      user_info = params[:userInfo]
       @security_level = user_info[:securityLevel].to_i
       bank_info = user_info[:bankInfo]
       email_info = user_info[:emailInfo]
@@ -48,6 +49,19 @@ module Coinone
 
     end
 
+    def get_balance
+
+      response = @connection.post("/v2/account/balance/")
+
+      puts response
+
+      set_balance(response)
+
+    end
+
+    def set_balance(params={})
+
+    end
 =begin
     def security_level
       return @security_level

@@ -1,8 +1,7 @@
 require 'rest-client'
 require 'openssl'
 require 'addressable/uri'
-
-require 'coinone/error'
+require 'base64'
 
 module Coinone
 
@@ -15,8 +14,8 @@ module Coinone
      AUTH_URI = "https://api.coinone.co.kr/oauth/access_token/"
      REFRESH_AUTH_URI = "https://api.coinone.co.kr/oauth/refresh_token/" 
      DELETE_AUTH_URI = "https://api.coinone.co.kr/oauth/delete_token/"
-     ACCESS_TOKEN = "ACESS_TOKEN"
-     SECRET_KEY= "SECRET_KEY"
+     #ACCESS_TOKEN = "ACESS_TOKEN"
+     #SECRET_KEY= "SECRET_KEY"
 
      def self.factory(params) # :nodoc
        Connection.new(
@@ -59,12 +58,17 @@ module Coinone
 
        response = resource[ connection_uri ].post params, {'Content-Type': 'application/json', 'X-COINONE-PAYLOAD': payload, 'X-COINONE-SIGNATURE': signature }
 
+       #puts "Response : #{response}\n\n"
+       #puts "Response Body : #{response.body}\n\n"
+
        check_for_errors(response.body)
+
        JSON.parse(response.body, symbolize_names: true)
+
      end
 
      def create_coinone_signature( payload )
-       OpenSSL::HMAC.hexdigest( 'sha512', SECRET_KEY.upcase, payload)
+       OpenSSL::HMAC.hexdigest( 'sha512', @secret_key.upcase, payload)
      end
 
      def create_coinone_payload( data )

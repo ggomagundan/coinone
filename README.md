@@ -1,5 +1,6 @@
 # Coinone
-[![GemVersion](https://badge.fury.io/rb/coinone.svg)](https://badge.fury.io/rb/coinone)
+[![GemVersion](https://badge.fury.io/rb/coinone.svg)](https://badge.fury.io/rb/coinone) ![](http://ruby-gem-downloads-badge.herokuapp.com/coinone?type=total)  [![Code Climate](https://lima.codeclimate.com/github/ggomagundan/coinone/badges/gpa.svg)](https://lima.codeclimate.com/github/ggomagundan/coinone) 
+[![Build Status](https://travis-ci.org/ggomagundan/coinone.svg?branch=master)](https://travis-ci.org/ggomagundan/coinone)[![GitHub issues](https://img.shields.io/github/issues/ggomagundan/coinone.svg)](https://github.com/ggomagundan/coinone/issues) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ggomagundan/coinone/master/LICENSE.txt)
 
 `Coinone` Gem is Ruby Language porting from Coinone API, and only support V2.
 
@@ -99,7 +100,7 @@ all_ticker =  Coinone::Public.get_ticker(currency: "all") # ALL Ticker
 - [ ] ACCOUNT V2 / Balance
 - [ ] ACCOUNT V2 / Daily Balance
 - [ ] ACCOUNT V2 / Deposit Address
-- [ ] ACCOUNT V2 / Virtual Account 
+- [ ] ACCOUNT V2 / Virtual Account
 
 - [ ] OAUTH / Delete Access Token
 - [ ] OAUTH / Get Access Token
@@ -131,7 +132,7 @@ The Documentation is at [Coinone Docs](http://doc.coinone.co.kr/)
 
 ## Change Log
 
-Current Version 0.1.0
+Current Version 0.2.1
 
 This link listing [Change Log](https://github.com/ggomagundan/coinone/blob/master/CHANGE_LOG.md)
 
@@ -151,5 +152,12 @@ This link listing [Change Log](https://github.com/ggomagundan/coinone/blob/maste
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 
+## Donate
+
+Welcome to Donation :)
+
+- BTC : 16MdVNJgvGYbVuaC6KrjGNy2RCrNsaPaZz
+- ETH : 0xba920569e0a24459dbf5b2fcab9adf3e4a41b918
+- ETC : 0xc45b10108920b5f20e574bbf021e73d93af5dbc8
 
 
