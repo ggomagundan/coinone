@@ -71,6 +71,22 @@ user =  Coinone::Account.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_k
 balance = user.get_balance
 
 ```
+AttributeName |  Class | Description
+----------- | ------------- | -------------
+result | String | Request's result
+btc||BTC information.
+- avail|Float|Available BTC.
+- balance|Float|Total BTC.
+eth||ETH information.
+- avail|Float|Available ETH.
+- balance|Float|Total ETH.
+etc||ETC information.
+- avail|Float|Available ETC.
+- balance|Float|Total ETC.
+normal_wallets|Array|BTC normal wallet information.
+- balance|Float|Total BTC.
+- label|String |Normal Wallet Label.
+ 
 
 
 - ACCOUNT V2 / Daily Balance
@@ -156,7 +172,7 @@ etc_day_complete_orders =  Coinone::Public.get_complete_orders(currency: "etc", 
 AttributeName |  Class | Description
 ----------- | ------------- | -------------
 result | String | Request's result
-completeOrders |Array|Recent complete orders.
+orders |Array|Recent complete orders.
 - price|Integer|Ask KRW price.
 - qty|Float|BTC(or ETH, ETC) quantity.
 - timestamp|Integer|Timestamp.
@@ -178,6 +194,19 @@ etc_ticker =  Coinone::Public.get_ticker(currency: "etc") # ETC Ticker
 all_ticker =  Coinone::Public.get_ticker(currency: "all") # ALL Ticker
 
 ```
+AttributeName |  Class | Description
+----------- | ------------- | -------------
+result | String | Request's result
+timestmap|Integer|Timestamp.
+tickers |Array|Tickers List
+- high|Integer|Highest price in 24 hours.
+- low|Integer|Lowest price in 24 hours.
+- last |Integer|Last completed price.
+- first |Integer|First price in 24 hours.
+- volume|Float|BTC volume of completed orders in 24 hours.
+- currency|String |Currency.
+
+
 
 #### TRANSACTION V2 
 
@@ -224,7 +253,7 @@ The Documentation is at [Coinone Docs](http://doc.coinone.co.kr/)
 
 ## Change Log
 
-Current Version 0.3.0
+Current Version 0.2.1
 
 This link listing [Change Log](https://github.com/ggomagundan/coinone/blob/master/CHANGE_LOG.md)
 
