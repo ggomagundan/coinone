@@ -8,7 +8,7 @@ module Coinone
 
       def initialize(params={})
         @result = params[:result] || nil
-        @result = params[:timestamp] || nil
+        @timestamp = params[:timestamp] || nil
         @tickers = []
         push_tickers(params)
       end
