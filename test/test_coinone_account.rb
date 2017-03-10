@@ -11,4 +11,8 @@ class TestCoinone < Minitest::Test
     assert_equal Coinone::Account.new({},@connection).get_user_info.result, "success"
   end
 
+  def test_get_user_info
+    assert_equal Coinone::Account.new({},@connection).get_balance.result, "success"
+  end
+
 end

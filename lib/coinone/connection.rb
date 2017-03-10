@@ -77,8 +77,8 @@ module Coinone
 
      def check_for_errors(response)
        # {"errorCode"=>"130", "errorMessage"=>"V2 API Nonce value must be a positive integer", "result"=>"error"} 
-       response = JSON.parse(response) 
-       case response["errorCode"].to_i 
+       response = JSON.parse(response)
+       case response["errorCode"].to_i
          when 11 then raise AccessTokenMissingError, response["errorMessage"]
          when 12 then raise InvalidAccessTokenError, response["errorMessage"]
          when 40 then raise InvalidAPIPermissionError, response["errorMessage"]

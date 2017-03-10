@@ -3,9 +3,11 @@ module Coinone
 
   module Public
     class CompleteOrders
+      attr_reader :result
       attr_reader :orders, :timestamp, :currency
 
       def initialize(params={})
+        @result = params[:result] || nil
         @orders = []
         @timestamp = params[:timestamp] || nil
         @currency= params[:currency] || nil
@@ -13,6 +15,7 @@ module Coinone
       end
 
       def push_orders(params)
+        @orders.clear
         params.each do |order|
           @orders.push(CompleteOrder.new(order))
         end

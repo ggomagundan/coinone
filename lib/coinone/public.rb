@@ -13,9 +13,8 @@ module Coinone
       @connection = connection || Connection.factory(options)
       response = @connection.get("/currency")
 
-      puts response
-
       @currency = Currency.new(response)
+      @currency
 
      end
 
@@ -23,9 +22,8 @@ module Coinone
       @connection = connection || Connection.factory(options)
       response = @connection.get("/orderbook", options)
 
-      puts response
-
       @orderbook = Orderbook.new(response)
+      @orderbook
 
      end
 
@@ -33,9 +31,8 @@ module Coinone
       @connection = connection || Connection.factory(options)
       response = @connection.get("/trades", options)
 
-      puts response
-
       @complete_orders = CompleteOrders.new(response)
+      @complete_orders
      end
 
 
@@ -43,9 +40,9 @@ module Coinone
       @connection = connection || Connection.factory(options)
       response = @connection.get("/ticker", options)
 
-      puts response
 
       @ticker = Tickers.new(response)
+      @ticker
 
 
      end
