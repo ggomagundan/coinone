@@ -1,4 +1,3 @@
 module Coinone
-  #VERSION = "0.2.1"
-  VERSION = Time.now.to_i
+  VERSION = "0.3.0"
 end
