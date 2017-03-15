@@ -1,5 +1,9 @@
 ## Release History
 
+* **v0.4.0** - 2017-03-15
+  - Porting `AccountV2 / Daily Balance`
+  - Porting `AccountV2 / Deposit Address`
+
 * **v0.3.0** - 2017-03-10
   - Porting `AccountV2 / Balance`
   - Add Response Struct to README.md file

@@ -114,12 +114,16 @@ user =  Coinone::Account.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_k
 deposit_address = user.get_deposit_address
 
 ```
+
 AttributeName |  Class | Description
 ----------- | ------------- | -------------
 result | String | Request's result
 btc||BTC information.
-- avail|BigDecimal|Available BTC.
--
+- address|String|BTC wallet address.
+eth||ETH information.
+- address|String|ETH wallet address.
+etc||ETC information.
+- address|String|ETC wallet address.
 
 - ACCOUNT V2 / Virtual Account
 
@@ -249,8 +253,8 @@ tickers |Array|Tickers List
 ## ToDo
 - [x] ACCOUNT V2 / Account Infomation
 - [x] ACCOUNT V2 / Balance
-- [ ] ACCOUNT V2 / Daily Balance
-- [ ] ACCOUNT V2 / Deposit Address
+- [x] ACCOUNT V2 / Daily Balance
+- [x] ACCOUNT V2 / Deposit Address
 - [ ] ACCOUNT V2 / Virtual Account
 
 - [ ] OAUTH / Delete Access Token
@@ -283,7 +287,7 @@ The Documentation is at [Coinone Docs](http://doc.coinone.co.kr/)
 
 ## Change Log
 
-Current Version 0.3.0
+Current Version 0.4.0
 
 This link listing [Change Log](https://github.com/ggomagundan/coinone/blob/master/CHANGE_LOG.md)
 
@@ -308,7 +312,7 @@ The gem is available as open source under the terms of the [MIT License](http://
 Welcome to Donation :)
 
 - Ƀ BTC : 16MdVNJgvGYbVuaC6KrjGNy2RCrNsaPaZz
-- Ξ ETH : 0xba920569e0a24459dbf5b2fcab9adf3e4a41b918
+- Ξ ETH : 0xC4347246c9469ca4d740Cd2927d38b5EaB354df8
 - ETC : 0xc45b10108920b5f20e574bbf021e73d93af5dbc8
 
 
