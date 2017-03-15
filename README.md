@@ -1,6 +1,6 @@
 # Coinone
 [![GemVersion](https://badge.fury.io/rb/coinone.svg)](https://badge.fury.io/rb/coinone) ![](http://ruby-gem-downloads-badge.herokuapp.com/coinone?type=total)  [![Code Climate](https://lima.codeclimate.com/github/ggomagundan/coinone/badges/gpa.svg)](https://lima.codeclimate.com/github/ggomagundan/coinone) 
-[![Build Status](https://travis-ci.org/ggomagundan/coinone.svg?branch=master)](https://travis-ci.org/ggomagundan/coinone) [![GitHub issues](https://img.shields.io/github/issues/ggomagundan/coinone.svg)](https://github.com/ggomagundan/coinone/issues) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ggomagundan/coinone/master/LICENSE.txt)
+[![Build Status](https://travis-ci.org/ggomagundan/coinone.svg?branch=master)](https://travis-ci.org/ggomagundan/coinone) [![GitHub issues](https://img.shields.io/github/issues/ggomagundan/coinone.svg)](https://github.com/ggomagundan/coinone/issues) [![Dependency Status](https://gemnasium.com/badges/github.com/ggomagundan/coinone.svg)](https://gemnasium.com/github.com/ggomagundan/coinone) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ggomagundan/coinone/master/LICENSE.txt)
 
 `Coinone` Gem is Ruby Language porting from Coinone API, and only support V2.
 
