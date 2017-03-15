@@ -46,15 +46,13 @@ module Coinone
 
      def post( connection_uri, params = {} )
        params[:access_token] = @access_token
-       params[:nonce]   = Time.now.to_i / 10000
+       params[:nonce]   = Time.now.to_i 
        payload = create_coinone_payload(params)
        signature = create_coinone_signature(payload)
-=begin
-       puts "Send To : #{connection_uri}"
-       puts "params: #{params}"
-       puts "payload: #{payload}"
-       puts "signature:  #{create_coinone_signature(payload)}"
-=end
+       #puts "Send To : #{connection_uri}"
+       #puts "params: #{params}"
+       #puts "payload: #{payload}"
+       #puts "signature:  #{create_coinone_signature(payload)}"
 
        response = resource[ connection_uri ].post params, {'Content-Type': 'application/json', 'X-COINONE-PAYLOAD': payload, 'X-COINONE-SIGNATURE': signature }
 

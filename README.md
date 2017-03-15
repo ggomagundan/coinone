@@ -75,22 +75,52 @@ AttributeName |  Class | Description
 ----------- | ------------- | -------------
 result | String | Request's result
 btc||BTC information.
-- avail|Float|Available BTC.
-- balance|Float|Total BTC.
+- avail|BigDecimal|Available BTC.
+- balance|BigDecimal|Total BTC.
 eth||ETH information.
-- avail|Float|Available ETH.
-- balance|Float|Total ETH.
+- avail|BigDecimal|Available ETH.
+- balance|BigDecimal|Total ETH.
 etc||ETC information.
-- avail|Float|Available ETC.
-- balance|Float|Total ETC.
+- avail|BigDecimal|Available ETC.
+- balance|BigDecimal|Total ETC.
 normal_wallets|Array|BTC normal wallet information.
-- balance|Float|Total BTC.
+- balance|BigDecimal|Total BTC.
 - label|String |Normal Wallet Label.
  
 
 
 - ACCOUNT V2 / Daily Balance
+```ruby
+user =  Coinone::Account.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+daily_balance = user.get_daily_balance
+
+```
+AttributeName |  Class | Description
+----------- | ------------- | -------------
+result | String | Request's result
+daily_balances|Array|Daily balance's information.
+- timestamp|Integer|Timestamp
+- value|Integer|Overall balance's value in KRW.
+- btc|BigDecimal|BTC balance.
+- etc|BigDecimal|ETH balance.
+- etc|BigDecimal|ETC balance.
+- krw|BigDecimal|KRW balance.
+-
 - ACCOUNT V2 / Deposit Address
+```ruby
+user =  Coinone::Account.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+deposit_address = user.get_deposit_address
+
+```
+AttributeName |  Class | Description
+----------- | ------------- | -------------
+result | String | Request's result
+btc||BTC information.
+- avail|BigDecimal|Available BTC.
+-
+
 - ACCOUNT V2 / Virtual Account
 
 #### OAUTH
@@ -197,7 +227,7 @@ all_ticker =  Coinone::Public.get_ticker(currency: "all") # ALL Ticker
 AttributeName |  Class | Description
 ----------- | ------------- | -------------
 result | String | Request's result
-timestmap|Integer|Timestamp.
+timestamp|Integer|Timestamp.
 tickers |Array|Tickers List
 - high|Integer|Highest price in 24 hours.
 - low|Integer|Lowest price in 24 hours.
@@ -253,7 +283,7 @@ The Documentation is at [Coinone Docs](http://doc.coinone.co.kr/)
 
 ## Change Log
 
-Current Version 0.2.1
+Current Version 0.3.0
 
 This link listing [Change Log](https://github.com/ggomagundan/coinone/blob/master/CHANGE_LOG.md)
 
