@@ -10,6 +10,7 @@ module Coinone
           @btc = FeeRate.new()
           @eth = FeeRate.new()
           @etc = FeeRate.new()
+          @xrp = FeeRate.new()
           update_info(params)
         end
 
@@ -17,6 +18,7 @@ module Coinone
           @btc.update_info(params[:btc]) if params.has_key? :btc
           @eth.update_info(params[:eth]) if params.has_key? :eth
           @etc.update_info(params[:etc]) if params.has_key? :etc
+          @xrp.update_info(params[:xrp]) if params.has_key? :xrp
         end
       end
 

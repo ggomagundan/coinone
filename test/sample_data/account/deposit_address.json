@@ -1,0 +1,10 @@
+{
+  "errorCode":"0",
+  "walletAddress":
+  {
+    "btc": "mnobqu4i6qMCJWDpf5UimRmr8JCvZ8FLcN",
+    "eth": "0x61bB630D3B2e8eda0FC1d50F9f958eC02e3969F6",
+    "etc": "0x37a9679c41e99dB270Bda88DE8FF50c0Cd23f326"
+  },
+  "result":"success"
+}

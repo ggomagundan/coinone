@@ -1,0 +1,35 @@
+{  
+  "errorCode":"0",
+  "normalWallets":
+  [  
+    {  
+      "balance":"6.1151",
+      "label":"First Wallet"
+    },
+    {  
+       "balance":"6.9448",
+       "label":"Second Wallet"
+    }
+  ],
+  "result":"success",
+  "btc":
+  {  
+    "avail":"344.33703699",
+    "balance":"344.33703699"
+  },
+  "eth":
+  {
+    "avail":"1.00001234",
+    "balance":"1.00001234"
+  },
+  "etc":
+  {
+    "avail":"300.32123699",
+    "balance":"300.32123699"
+  },
+  "krw":
+  {  
+    "avail":"6901425",
+    "balance":"6901430"
+  }
+}

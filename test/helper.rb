@@ -12,3 +12,7 @@ require 'bigdecimal'
 require 'bigdecimal/util'
 
 require 'coinone'
+
+class Minitest::Test
+  @@data_path = File.expand_path(File.join(File.dirname(__FILE__), 'sample_data'))
+end
