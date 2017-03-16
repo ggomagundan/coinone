@@ -32,37 +32,37 @@ user =  Coinone::Account.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_k
 user_info = user.get_user_info
 
 ```
-AttributeName |  Class | Description
------------ | ------------- | -------------
-result | String | Request's result
-security_level | Integer | User's security level. Summation of authentications.
-virtual_account_info ||Virtual account's information.
--  depositor|String|Virtual account's depositor.
-- account_number|String |Virtual account's number.
-- bank_name|String |Virtual account's bank name.
-  mobile_info ||Mobile authentication's information.
-- user_name|String |Mobile phone's user name.
-- phone_number|String | Phone number.
-- phone_corp|String| Mobile phone's corporation code.
-- is_authenticated|Boolean | 'true' If a user is authenticated.
-bank_info||User's bank information.
-- depositor|String |Account's depositor.
-- bank_code |String |Account's bankCode. ([Link](https://en.wikipedia.org/wiki/List_of_banks_in_South_Korea))
-- account_number|String |Account's number.
--  is_authenticated|Boolean |'true' if a user is authenticated.
-email_info||User's email information.
-- is_authenticated |Boolean | 'true' if a user is authenticated.
-- email |String 	|User's email address.
- fee_rates ||User's fee.
-- btc | |User's fee.
-- - maker |Float |Percent of BTC maker fee.
-- - taker |Float 	|Percent of BTC taker fee.
-- eth | |User's fee.
-- - maker | Float |Percent of ETH maker fee.
-- - taker|Float |Percent of ETH taker fee.
-- etc | |User's fee.
-- - maker |Float |Percent of ETC maker fee.
-- - taker |Float |Percent of ETC taker fee.
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|security_level | Integer | User's security level. Summation of authentications.|
+|virtual_account_info ||Virtual account's information.|
+|-  depositor|String|Virtual account's depositor.|
+|- account_number|String |Virtual account's number.|
+|- bank_name|String |Virtual account's bank name.|
+| mobile_info ||Mobile authentication's information.|
+|- user_name|String |Mobile phone's user name.|
+|- phone_number|String | Phone number.|
+|- phone_corp|String| Mobile phone's corporation code.|
+|- is_authenticated|Boolean | 'true' If a user is authenticated.|
+|bank_info||User's bank information.|
+|- depositor|String |Account's depositor.|
+|- bank_code |String |Account's bankCode. ([Link](https://en.wikipedia.org/wiki/List_of_banks_in_South_Korea))|
+|- account_number|String |Account's number.|
+|-  is_authenticated|Boolean |'true' if a user is authenticated.|
+|email_info||User's email information.|
+|- is_authenticated |Boolean | 'true' if a user is authenticated.|
+|- email |String 	|User's email address.|
+| fee_rates ||User's fee.|
+|- btc | |User's fee.|
+|- - maker |Float |Percent of BTC maker fee.|
+|- - taker |Float 	|Percent of BTC taker fee.|
+|- eth | |User's fee.|
+|- - maker | Float |Percent of ETH maker fee.|
+|- - taker|Float |Percent of ETH taker fee.|
+|- etc | |User's fee.|
+|- - maker |Float |Percent of ETC maker fee.|
+|- - taker |Float |Percent of ETC taker fee.|
 
 - ACCOUNT V2 / Balance
 ```ruby
@@ -71,21 +71,21 @@ user =  Coinone::Account.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_k
 balance = user.get_balance
 
 ```
-AttributeName |  Class | Description
------------ | ------------- | -------------
-result | String | Request's result
-btc||BTC information.
-- avail|BigDecimal|Available BTC.
-- balance|BigDecimal|Total BTC.
-eth||ETH information.
-- avail|BigDecimal|Available ETH.
-- balance|BigDecimal|Total ETH.
-etc||ETC information.
-- avail|BigDecimal|Available ETC.
-- balance|BigDecimal|Total ETC.
-normal_wallets|Array|BTC normal wallet information.
-- balance|BigDecimal|Total BTC.
-- label|String |Normal Wallet Label.
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|btc||BTC information.|
+|- avail|BigDecimal|Available BTC.|
+|- balance|BigDecimal|Total BTC.|
+|eth||ETH information.|
+|- avail|BigDecimal|Available ETH.|
+|- balance|BigDecimal|Total ETH.|
+|etc||ETC information.|
+|- avail|BigDecimal|Available ETC.|
+|- balance|BigDecimal|Total ETC.|
+|normal_wallets|Array|BTC normal wallet information.|
+|- balance|BigDecimal|Total BTC.|
+|- label|String |Normal Wallet Label.|
  
 
 
@@ -96,17 +96,18 @@ user =  Coinone::Account.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_k
 daily_balance = user.get_daily_balance
 
 ```
-AttributeName |  Class | Description
------------ | ------------- | -------------
-result | String | Request's result
-daily_balances|Array|Daily balance's information.
-- timestamp|Integer|Timestamp
-- value|Integer|Overall balance's value in KRW.
-- btc|BigDecimal|BTC balance.
-- etc|BigDecimal|ETH balance.
-- etc|BigDecimal|ETC balance.
-- krw|BigDecimal|KRW balance.
--
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|daily_balances|Array|Daily balance's information.|
+|- timestamp|Integer|Timestamp|
+|- value|Integer|Overall balance's value in KRW.|
+|- btc|BigDecimal|BTC balance.|
+|- etc|BigDecimal|ETH balance.|
+|- etc|BigDecimal|ETC balance.|
+|- krw|BigDecimal|KRW balance.|
+
+
 - ACCOUNT V2 / Deposit Address
 ```ruby
 user =  Coinone::Account.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
@@ -115,15 +116,15 @@ deposit_address = user.get_deposit_address
 
 ```
 
-AttributeName |  Class | Description
------------ | ------------- | -------------
-result | String | Request's result
-btc||BTC information.
-- address|String|BTC wallet address.
-eth||ETH information.
-- address|String|ETH wallet address.
-etc||ETC information.
-- address|String|ETC wallet address.
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|btc||BTC information.|
+|- address|String|BTC wallet address.|
+|eth||ETH information.|
+|- address|String|ETH wallet address.|
+|etc||ETC information.|
+|- address|String|ETC wallet address.|
 
 - ACCOUNT V2 / Virtual Account
 
@@ -155,11 +156,11 @@ currency =  Coinone::Public.get_currency
 
 ```
 
-AttributeName |  Class | Description
------------ | ------------- | -------------
-result | String | Request's result
-currency|Float |Currency Rate.
-currency_type |String | Currency Type. Ex) USD, KRW..
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|currency|Float |Currency Rate.|
+|currency_type |String | Currency Type. Ex) USD, KRW..|
 
 
 - PUBLIC / Orderbook
@@ -173,17 +174,17 @@ eth_orderbook =  Coinone::Public.get_orderbook(currency: "eth") # ETH Orderbook
 etc_orderbook =  Coinone::Public.get_orderbook(currency: "etc") # ETC Orderbook
 
 ```
-AttributeName |  Class | Description
------------ | ------------- | -------------
-result | String | Request's result
-ask |Array|Ask List.
-- price|Integer|Ask KRW price.
-- qty|Float|Ask BTC(or ETH, ETC) quantity.
-bid|Array|Bid List.
-- price |Integer|Bid KRW price.
- - qty|Float|Bid BTC(or ETH, ETC) quantity.
-timestamp|Integer|Timestamp.
-currency|String |Currency.
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|ask |Array|Ask List.|
+|- price|Integer|Ask KRW price.|
+|- qty|Float|Ask BTC(or ETH, ETC) quantity.|
+|bid|Array|Bid List.|
+|- price |Integer|Bid KRW price.|
+|- qty|Float|Bid BTC(or ETH, ETC) quantity.|
+|timestamp|Integer|Timestamp.|
+|currency|String |Currency.|
 
 
 - PUBLIC / Recent Complete Orders
@@ -203,15 +204,16 @@ etc_hour_complete_orders =  Coinone::Public.get_complete_orders(currency: "etc",
 etc_day_complete_orders =  Coinone::Public.get_complete_orders(currency: "etc", period: "day") # ETC and Hour Complete Orders 
 
 ```
-AttributeName |  Class | Description
------------ | ------------- | -------------
-result | String | Request's result
-orders |Array|Recent complete orders.
-- price|Integer|Ask KRW price.
-- qty|Float|BTC(or ETH, ETC) quantity.
-- timestamp|Integer|Timestamp.
-timestamp|Integer|Timestamp.
-currency|String |Currency.
+
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|orders |Array|Recent complete orders.|
+|- price|Integer|Ask KRW price.|
+|- qty|Float|BTC(or ETH, ETC) quantity.|
+|- timestamp|Integer|Timestamp.|
+|timestamp|Integer|Timestamp.|
+|currency|String |Currency.|
 
 
 
@@ -228,17 +230,18 @@ etc_ticker =  Coinone::Public.get_ticker(currency: "etc") # ETC Ticker
 all_ticker =  Coinone::Public.get_ticker(currency: "all") # ALL Ticker
 
 ```
-AttributeName |  Class | Description
------------ | ------------- | -------------
-result | String | Request's result
-timestamp|Integer|Timestamp.
-tickers |Array|Tickers List
-- high|Integer|Highest price in 24 hours.
-- low|Integer|Lowest price in 24 hours.
-- last |Integer|Last completed price.
-- first |Integer|First price in 24 hours.
-- volume|Float|BTC volume of completed orders in 24 hours.
-- currency|String |Currency.
+
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|timestamp|Integer|Timestamp.|
+|tickers |Array|Tickers List|
+|- high|Integer|Highest price in 24 hours.|
+|- low|Integer|Lowest price in 24 hours.|
+|- last |Integer|Last completed price.|
+|- first |Integer|First price in 24 hours.|
+|- volume|Float|BTC volume of completed orders in 24 hours.|
+|- currency|String |Currency.|
 
 
 
