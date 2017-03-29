@@ -18,7 +18,6 @@ module Coinone
       @balance = Balance.new()
       @daily_balance = DailyBalance.new()
       @deposit_address = DepositAddress.new()
-      @virtual_account = VirtualAccount.new()
 
     end
 
@@ -62,7 +61,7 @@ module Coinone
 
       response = @connection.post("/v2/account/virtual_account/")
 
-      @virtual_account.update_virtual_account(response)
+      @virtual_account.update_address(response)
       @virtual_account
 
     end

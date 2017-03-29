@@ -46,7 +46,7 @@ module Coinone
 
      def post( connection_uri, params = {} )
        params[:access_token] = @access_token
-       params[:nonce]   = Time.now.to_i 
+       params[:nonce]   = Time.now.to_i
        payload = create_coinone_payload(params)
        signature = create_coinone_signature(payload)
        #puts "Send To : #{connection_uri}"

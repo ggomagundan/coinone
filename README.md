@@ -128,6 +128,21 @@ deposit_address = user.get_deposit_address
 
 - ACCOUNT V2 / Virtual Account
 
+```ruby
+user =  Coinone::Account.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+virtual_address = user.get_virtual_address
+
+```
+
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|depositor|String|Virtual account's depositor.|
+|account_number|String|Virtual account's number.|
+|bank_name|String|Virtual account's bank name.|
+
+
 #### OAUTH
 
 - OAUTH / Delete Access Token
@@ -138,12 +153,128 @@ deposit_address = user.get_deposit_address
 #### ORDER V2
 
 - ORDER V2 / Cancel All Order
+
+```ruby
+order =  Coinone::Order.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+default_cancel_all = order.cancel_all_order()  # Default currency "btc"
+btc_cancel_all = order.cancel_all_order(currency: "btc")
+eth_cancel_all = order.cancel_all_order(currency: "eth") 
+etc_cancel_all = order.cancel_all_order(currency: "etc") 
+
+```
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|success_canceled_orders|The number of canceled orders.|
+|overall_orders|Integer|The number of overall orders before canceled.|
+
 - ORDER V2 / Cancel Order
+```ruby
+order =  Coinone::Order.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+cancel_order = order.cancel_order(order_id: "COINONE_ORDER_ID", price: CANCEL_PRICE, qty: CANCEL_QTY, is_ask: 1(SET "1" IS SELL) , currency: "btc or eth or etc")
+# cancel_order = order.cancel_order(order_id: "f9c53135-952d-44ef-bc77-b3ab4f1c445c", price: 1500000, qty: 0.3, is_ask: 1, currency: "eth")
+
+
+```
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+
 - ORDER V2 / Limit Buy
+
+```ruby
+order =  Coinone::Order.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+limit_buy = order.get_limit_buy(currency: "currency: "btc or eth or etc"", price: BUY_PRICE, qty: BUY_QTY)
+# limit_buy = order.get_limit_buy(currency: "eth", price: 56000, qty: 1)
+
+```
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|order_id | String | Order ID|
+
+
 - ORDER V2 / Limit Sell
+```ruby
+order =  Coinone::Order.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+limit_buy = order.get_limit_sell(currency: "currency: "btc or eth or etc"", price: BUY_PRICE, qty: BUY_QTY)
+# limit_buy = order.get_limit_sell(currency: "eth", price: 56000, qty: 1)
+
+```
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|order_id | String | Order ID|
+
 - ORDER V2 / Market Buy
+```ruby
+order =  Coinone::Order.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+limit_buy = order.get_market_buy(currency: "currency: "btc or eth or etc"", price: BUY_PRICE)
+# limit_buy = order.get_market_buy(currency: "eth", price: 200000)
+
+```
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|order_id | String | Order ID|
+
 - ORDER V2 / Market Sell
+```ruby
+order =  Coinone::Order.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+limit_buy = order.get_market_sell(currency: "currency: "btc or eth or etc"", qty: SELL_QTY)
+# limit_buy = order.get_market_sell(currency: "eth", qty: 10)
+
+```
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|order_id | String | Order ID|
+
 - ORDER V2 / My Complete Orders
+```ruby
+order =  Coinone::Order.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+complete_orders = order.get_complete_orders(currency: "eth")
+
+``` 
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|complete_orders |Array|List of completed orders.|
+|- timestamp|Integer|Timestamp.|
+|- price|Integer|price of order.|
+|- qty|Float|quantity of order.|
+|- type|String|Order Type sell: 'ask', buy: 'bid'|
+|- fee_rate|Float|Fee rate.|
+|- fee|Float|Fee.|
+|- order_id|String|Order ID.|
+
+
+- ORDER V2 / My Limit Orders
+```ruby
+order =  Coinone::Order.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+complete_orders = order.get_complete_orders(currency: "eth")
+
+``` 
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|limit_orders |Array|List of limit orders.|
+|- index|Integer|Index of order..|
+|- timestamp|Integer|Timestamp.|
+|- price|Integer|price of order.|
+|- qty|Float|quantity of order.|
+|- order_id|String|Order ID.|
+|- type|String|Order Type sell: 'ask', buy: 'bid'|
+|- fee_rate|Float|Fee rate.|
+
 
 #### PUBLIC
 
@@ -258,21 +389,21 @@ all_ticker =  Coinone::Public.get_ticker(currency: "all") # ALL Ticker
 - [x] ACCOUNT V2 / Balance
 - [x] ACCOUNT V2 / Daily Balance
 - [x] ACCOUNT V2 / Deposit Address
-- [ ] ACCOUNT V2 / Virtual Account
+- [x] ACCOUNT V2 / Virtual Account
 
 - [ ] OAUTH / Delete Access Token
 - [ ] OAUTH / Get Access Token
 - [ ] OAUTH / Get Request  Token
 - [ ] OAUTH / Refresh Access Token
 
-- [ ] ORDER V2 / Cancel All Order
-- [ ] ORDER V2 / Cancel Order
-- [ ] ORDER V2 / Limit Buy
-- [ ] ORDER V2 / Limit Sell
-- [ ] ORDER V2 / Market Buy
-- [ ] ORDER V2 / Market Sell
-- [ ] ORDER V2 / My Complete Orders
-- [ ] ORDER V2 / My Limit Orders
+- [x] ORDER V2 / Cancel All Order
+- [x] ORDER V2 / Cancel Order
+- [x] ORDER V2 / Limit Buy
+- [x] ORDER V2 / Limit Sell
+- [x] ORDER V2 / Market Buy
+- [x] ORDER V2 / Market Sell
+- [x] ORDER V2 / My Complete Orders
+- [x] ORDER V2 / My Limit Orders
 
 - [x] PUBLIC / Currency
 - [x] PUBLIC / OrderBook
@@ -290,7 +421,7 @@ The Documentation is at [Coinone Docs](http://doc.coinone.co.kr/)
 
 ## Change Log
 
-Current Version 0.4.0
+Current Version 0.5.0
 
 This link listing [Change Log](https://github.com/ggomagundan/coinone/blob/master/CHANGE_LOG.md)
 

@@ -1,5 +1,16 @@
 ## Release History
 
+* **v0.5.0** - 2017-03-15
+  - Porting `OrderV2 / Cancel All Order`
+  - Porting `OrderV2 / Cancel Order`
+  - Porting `OrderV2 / Limit Buy`
+  - Porting `OrderV2 / Limit Sell`
+  - Porting `OrderV2 / Market Buy`
+  - Porting `OrderV2 / Market Sell`
+  - Porting `OrderV2 / My Complete Orders`
+  - Porting `OrderV2 / My Limit Orders`
+
+
 * **v0.4.0** - 2017-03-15
   - Porting `AccountV2 / Daily Balance`
   - Porting `AccountV2 / Deposit Address`
