@@ -1,6 +1,12 @@
 ## Release History
 
-* **v0.5.0** - 2017-03-15
+* **v0.6.0** - 2017-03-30
+  - Porting `TransactionV2 / 2-Factor Authentication`
+  - Porting `TransactionV2 / Coin TransactionsHistory`
+  - Porting `TransactionV2 / KRW Transactions History`
+  - Porting `TransactionV2 / Send Coin`
+
+* **v0.5.0** - 2017-03-29
   - Porting `OrderV2 / Cancel All Order`
   - Porting `OrderV2 / Cancel Order`
   - Porting `OrderV2 / Limit Buy`

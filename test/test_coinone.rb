@@ -7,8 +7,12 @@ class TestCoinone < Minitest::Test
 
   end
 
-  def test_get_user_info
-    assert_equal Coinone::Account.new({},@connection).get_user_info.result, "success"
+  def test_get_connection_access_token
+    assert_equal @connection.access_token, ENV['COINONE_ACCESS_TOKEN']
+  end
+
+  def test_get_connection_access_token
+    assert_equal @connection.secret_key, ENV['COINONE_SECRET_KEY']
   end
 
 end

@@ -134,7 +134,7 @@ deposit_address = user.get_deposit_address
 ```ruby
 user =  Coinone::Account.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
 
-virtual_address = user.get_virtual_address
+virtual_address = user.get_virtual_account
 
 ```
 
@@ -382,9 +382,97 @@ all_ticker =  Coinone::Public.get_ticker(currency: "all") # ALL Ticker
 #### TRANSACTION V2 
 
 - TRANSACTION V2 / 2-Factor Authentication
+
+```ruby
+transaction =  Coinone::Transaction.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+krw_2factor =  transaction.get_auth_number(type: "krw") 
+
+btc_2factor =  transaction.get_auth_number(type: "btc") 
+
+eth_2factor =  transaction.get_auth_number(type: "eth") 
+
+etc_2factor =  transaction.get_auth_number(type: "etc") 
+
+```
+
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+
 - TRANSACTION V2 / Coin Transactions History
+
+```ruby
+transaction =  Coinone::Transaction.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+btc_history =  transaction.get_coin_history(currency: "btc")
+
+eth_history =  transaction.get_coin_history(currency: "eth")
+
+etc_history =  transaction.get_coin_history(currency: "etc")
+
+```
+
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|histories|Array|Coin transactions history.|
+|- txid |String|Transaction ID.|
+|- type |String|Transaction type. send: "send", receive: "receive".|
+|- from |String|From address.|
+|- to |String|To address.|
+|- confirmations |Integer|Confirmations.|
+|- quantity |Float|Transaction quantity.|
+|- timestamp |Integer|Timestamp.|
+
 - TRANSACTION V2 / KRW Transactions History
+
+```ruby
+transaction =  Coinone::Transaction.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+krw_history =  transaction.get_krw_history()
+
+krw_history.histories.first.process_level_to_s  # Change process_level to Level String
+=> "Deposit Completed" 
+
+
+```
+
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|histories|Array|KRW transactions history.|
+|- bank_code |Integer|Bank code.|
+|- account_number |String|Bank account number.|
+|- depositor |String|Depositor's name|
+|- amount |Integer|Transaction amount.|
+|- process_level |Integer|KRW transaction's process level. 1: Deposit Completed, 2: Request Withdrawal, 3: Request Accepted, 4: Withrawal Canceled, 5: Withdrawal Completed.|
+|- timestamp |Integer|Timestamp.|
+
 - TRANSACTION V2 / Send Coin
+
+```ruby
+transaction =  Coinone::Transaction.new(access_token: ENV['COINONE_ACCESS_TOKEN'], secret_key: ENV['COINONE_SECRET_KEY'])
+
+btc_send_coin =  transaction.send_coin(currency: "btc", address: "xxxxxxxxxxxxxxxxx", auth_number: "XXXX", qty: 1)
+btc_send_coin.transaction_url # BTC Transaction Tracker URL
+=> "https://blockchain.info/tx/xxxxxxxxxxxxxxxxx"
+
+eth_send_coin =  transaction.send_coin(currency: "eth", address: "0x#####", auth_number: "XXXX", qty: 1)
+eth_send_coin.transaction_url # ETH Transaction Tracker URL
+=> "https://etherscan.io/tx/0x##########"
+
+etc_send_coin =  transaction.send_coin(currency: "etc", address: "0x#####", auth_number: "XXXX", qty: 1)
+etc_send_coin.transaction_url # ETC Transaction Tracker URL
+=> "https://gastracker.io/tx/0x#####"
+
+
+```
+
+|AttributeName |  Class | Description|
+|----------- | ------------- | -------------|
+|result | String | Request's result|
+|txid | String | TxID|
 
 
 ## ToDo
@@ -413,10 +501,10 @@ all_ticker =  Coinone::Public.get_ticker(currency: "all") # ALL Ticker
 - [x] PUBLIC / Recent Complete Orders
 - [x] PUBLIC / Ticker
 
-- [ ] TRANSACTION V2 / 2-Factor Authentication
-- [ ] TRANSACTION V2 / Coin Transactions History
-- [ ] TRANSACTION V2 / KRW Transactions History
-- [ ] TRANSACTION V2 / Send Coin
+- [x] TRANSACTION V2 / 2-Factor Authentication
+- [x] TRANSACTION V2 / Coin Transactions History
+- [x] TRANSACTION V2 / KRW Transactions History
+- [x] TRANSACTION V2 / Send Coin
 
 ## Full documentation 
 
@@ -424,7 +512,7 @@ The Documentation is at [Coinone Docs](http://doc.coinone.co.kr/)
 
 ## Change Log
 
-Current Version 0.5.0
+Current Version 0.6.0
 
 This link listing [Change Log](https://github.com/ggomagundan/coinone/blob/master/CHANGE_LOG.md)
 
