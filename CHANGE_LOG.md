@@ -1,6 +1,6 @@
 ## Release History
 
-* **v0.7.0** - 2017-04-01
+* **v0.7.0** - 2017-04-03
   - Change Code to Ruby Convension( present? to !OBJ.nil?)
   - Make Test Code
 

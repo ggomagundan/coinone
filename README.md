@@ -512,7 +512,7 @@ The Documentation is at [Coinone Docs](http://doc.coinone.co.kr/)
 
 ## Change Log
 
-Current Version 0.6.0
+Current Version 0.7.0
 
 This link listing [Change Log](https://github.com/ggomagundan/coinone/blob/master/CHANGE_LOG.md)
 
