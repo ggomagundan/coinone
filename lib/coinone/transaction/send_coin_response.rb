@@ -8,11 +8,11 @@ module Coinone
       attr_reader :result
       attr_reader :txid, :currency
 
-      def initialize(options={}, currency: nil)
+      def initialize(options={})
 
         @result = options[:result] || nil
         @txid = nil
-        @currency = currency.try("downcase") || nil
+        @currency = options[:currency] || nil
 
         update_response(options)
 

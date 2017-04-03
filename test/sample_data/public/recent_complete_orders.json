@@ -1,0 +1,14 @@
+{
+  "errorCode": "0",
+  "timestamp": "1416895705",
+  "result": "success",
+  "currency": "btc",
+  "completeOrders":
+  [
+    {
+      "timestamp": "1416893212",
+      "price": "420000",
+      "qty": "0.0"
+    }
+  ]
+}

@@ -21,7 +21,7 @@ module Coinone
       def update_response(params={})
 
         @result = params[:result] if params.has_key? :result
-        if params[:completeOrders].present?
+        if !params[:completeOrders].nil?
           @complete_orders = []
           params[:completeOrders].each do |complete_order|
             @complete_orders.push(CompleteOrder.new(complete_order))

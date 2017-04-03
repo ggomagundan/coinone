@@ -23,12 +23,11 @@ module Coinone
 
         def update_history(params={})
 
-          puts params
-          @bank_code = params[:bankCode].to_i if (params.has_key? :bankCode) && params[:bankCode].present?
-          @account_number = params[:accountNumber].strip if (params.has_key? :accountNumber) && params[:accountNumber].present?
-          @depositor =  params[:depositor].strip if (params.has_key? :depositor) && params[:depositor].present?
+          @bank_code = params[:bankCode].to_i if (params.has_key? :bankCode) && !params[:bankCode].nil?
+          @account_number = params[:accountNumber].strip if (params.has_key? :accountNumber) && !params[:accountNumber].nil?
+          @depositor =  params[:depositor].strip if (params.has_key? :depositor) && !params[:depositor].nil?
           @amount =  params[:amount].to_i if params.has_key? :amount
-          @process_level =  params[:processLevel].to_i if (params.has_key? :processLevel) && params[:processLevel].present?
+          @process_level =  params[:processLevel].to_i if (params.has_key? :processLevel) && !params[:processLevel].nil?
           @timestamp =  params[:timestamp].to_i if params.has_key? :timestamp
 
         end

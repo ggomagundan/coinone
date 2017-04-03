@@ -22,7 +22,7 @@ module Coinone
       def update_response(params={})
 
         @result = params[:result] if params.has_key? :result
-        if params[:limitOrders].present?
+        if !params[:limitOrders].nil?
           @limit_orders = []
           params[:limitOrders].each do |limit_order|
             @limit_orders.push(LimitOrder.new(limit_order))

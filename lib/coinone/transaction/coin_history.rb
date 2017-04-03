@@ -22,7 +22,7 @@ module Coinone
       def update_histories(params={})
 
         @result = params[:result] if params.has_key? :result
-        if params[:transactions].present?
+        if !params[:transactions].nil?
           @histories = []
           params[:transactions].each do |transaction|
             @histories.push(History.new(transaction))

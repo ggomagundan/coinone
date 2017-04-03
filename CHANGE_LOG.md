@@ -1,5 +1,10 @@
 ## Release History
 
+* **v0.7.0** - 2017-04-01
+  - Change Code to Ruby Convension( present? to !OBJ.nil?)
+  - Make Test Code
+
+
 * **v0.6.0** - 2017-03-30
   - Porting `TransactionV2 / 2-Factor Authentication`
   - Porting `TransactionV2 / Coin TransactionsHistory`
