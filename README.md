@@ -357,7 +357,7 @@ ticker =  Coinone::Public.get_ticker # Default "BTC"
 
 btc_ticker =  Coinone::Public.get_ticker(currency: "btc") # BTC Ticker
 
-etc_ticker =  Coinone::Public.get_ticker(currency: "etc") # ETH Ticker
+eth_ticker =  Coinone::Public.get_ticker(currency: "eth") # ETH Ticker
 
 etc_ticker =  Coinone::Public.get_ticker(currency: "etc") # ETC Ticker
 
