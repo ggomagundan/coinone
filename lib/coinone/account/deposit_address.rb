@@ -14,6 +14,7 @@ module Coinone
         @btc = Wallet.new()
         @eth = Wallet.new()
         @etc = Wallet.new()
+        @xrp = Wallet.new()
 
         update_address(options)
 
@@ -27,6 +28,7 @@ module Coinone
           @btc.update_address(address) if address.has_key? :btc
           @eth.update_address(address) if address.has_key? :eth
           @etc.update_address(address) if address.has_key? :etc
+          @xrp.update_address(address) if address.has_key? :xrp
         end
 
       end
