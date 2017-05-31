@@ -307,16 +307,18 @@ eth_orderbook =  Coinone::Public.get_orderbook(currency: "eth") # ETH Orderbook
 
 etc_orderbook =  Coinone::Public.get_orderbook(currency: "etc") # ETC Orderbook
 
+xrp_orderbook =  Coinone::Public.get_orderbook(currency: "xrp") # XRP Orderbook
+
 ```
 |AttributeName |  Class | Description|
 |----------- | ------------- | -------------|
 |result | String | Request's result|
 |ask |Array|Ask List.|
 |- price|Integer|Ask KRW price.|
-|- qty|Float|Ask BTC(or ETH, ETC) quantity.|
+|- qty|Float|Ask BTC(or ETH, ETC, XRP) quantity.|
 |bid|Array|Bid List.|
 |- price |Integer|Bid KRW price.|
-|- qty|Float|Bid BTC(or ETH, ETC) quantity.|
+|- qty|Float|Bid BTC(or ETH, ETC, XRP) quantity.|
 |timestamp|Integer|Timestamp.|
 |currency|String |Currency.|
 
@@ -336,6 +338,10 @@ eth_day_complete_orders =  Coinone::Public.get_complete_orders(currency: "eth", 
 etc_hour_complete_orders =  Coinone::Public.get_complete_orders(currency: "etc", period: "hour") # ETC and Hour Complete Orders
 
 etc_day_complete_orders =  Coinone::Public.get_complete_orders(currency: "etc", period: "day") # ETC and Hour Complete Orders 
+
+xrp_hour_complete_orders =  Coinone::Public.get_complete_orders(currency: "xrp", period: "hour") # XRP and Hour Complete Orders
+
+xrp_day_complete_orders =  Coinone::Public.get_complete_orders(currency: "xrp", period: "day") # XRP and Hour Complete Orders 
 
 ```
 
@@ -360,6 +366,8 @@ btc_ticker =  Coinone::Public.get_ticker(currency: "btc") # BTC Ticker
 eth_ticker =  Coinone::Public.get_ticker(currency: "eth") # ETH Ticker
 
 etc_ticker =  Coinone::Public.get_ticker(currency: "etc") # ETC Ticker
+
+xrp_ticker =  Coinone::Public.get_ticker(currency: "xrp") # ETC Ticker
 
 all_ticker =  Coinone::Public.get_ticker(currency: "all") # ALL Ticker
 
@@ -512,7 +520,7 @@ The Documentation is at [Coinone Docs](http://doc.coinone.co.kr/)
 
 ## Change Log
 
-Current Version 0.7.0
+Current Version 0.8.0.a
 
 This link listing [Change Log](https://github.com/ggomagundan/coinone/blob/master/CHANGE_LOG.md)
 

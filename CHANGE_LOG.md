@@ -1,5 +1,8 @@
 ## Release History
 
+* **v0.8.0.a** - 2017-05-31
+  - Add XRP Code to `PUBLIC / OrderBook`, `PUBLIC / Recent Complete Orders`, `PUBLIC / Ticker` API
+
 * **v0.7.0** - 2017-04-03
   - Change Code to Ruby Convension( present? to !OBJ.nil?)
   - Make Test Code
