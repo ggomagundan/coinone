@@ -545,7 +545,7 @@ The gem is available as open source under the terms of the [MIT License](http://
 Welcome to Donation :)
 
 - Ƀ BTC : 16MdVNJgvGYbVuaC6KrjGNy2RCrNsaPaZz
-- Ξ ETH : 0xC4347246c9469ca4d740Cd2927d38b5EaB354df8
+- Ξ ETH : 0x5debb97a6Cc1Fdf686a3C6aA804a623a21deD73c
 - ETC : 0xc45b10108920b5f20e574bbf021e73d93af5dbc8
 
 
