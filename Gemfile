@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 # Specify your gem's dependencies in coinone.gemspec
 
-gem 'pry'
+gem 'pry', :group => :development
 gem "minitest"
-gem 'dotenv'
+gem 'dotenv', :group => :development
 
 gemspec

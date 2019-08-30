@@ -1,5 +1,8 @@
 ## Release History
 
+* **v0.9.0** - 2019-08-30
+  - Update `rest-client` dependency version (https://github.com/rest-client/rest-client/issues/713)
+
 * **v0.8.0.a** - 2017-05-31
   - Add XRP Code to `PUBLIC / OrderBook`, `PUBLIC / Recent Complete Orders`, `PUBLIC / Ticker` API
 
