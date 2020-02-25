@@ -3,9 +3,7 @@ language: ruby
 cache: bundler
 
 rvm:
-  - 2.4.9
-  - 2.5.7
-  - ruby-head
+  - 2.6.5
   - ruby-head
 
 #gemfile:
