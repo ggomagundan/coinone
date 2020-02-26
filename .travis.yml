@@ -4,6 +4,7 @@ cache: bundler
 
 rvm:
   - 2.6.5
+  - 2.7.0
   - ruby-head
 
 #gemfile:
